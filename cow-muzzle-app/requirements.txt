@@ -8,4 +8,4 @@ opencv-python-headless
 matplotlib
 scikit-image
 gunicorn
-pandas
+pandas 
