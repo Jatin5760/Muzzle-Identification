@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}About MuzzleID{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1 class="hero-title">About MuzzleID</h1>
+        <p class="hero-subtitle">
+            We are pioneers in applying advanced AI to solve real-world challenges in agriculture.
+        </p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <h2>Our Mission</h2>
+                <p class="muted">
+                    Our mission is to empower farmers and livestock managers with reliable, non-invasive, and cost-effective
+                    technology for animal identification. We believe that by leveraging the power of AI, we can improve
+                    animal welfare, enhance food traceability, and increase operational efficiency for farms of all sizes.
+                </p>
+            </div>
+        </div>
+        <div class="grid-2 mt-xl">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="info-icon mb-md"><i data-feather="cpu"></i></div>
+                    <h3>Our Technology</h3>
+                    <p class="muted">
+                        MuzzleID is built on a foundation of cutting-edge computer vision models, including Meta's 
+                        Segment Anything 2 for precise muzzle segmentation and ResNet50 for robust feature extraction. 
+                        This powerful combination allows us to create a unique digital fingerprint for each animal, 
+                        ensuring unparalleled accuracy and reliability.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="info-icon mb-md"><i data-feather="users"></i></div>
+                    <h3>Our Team</h3>
+                    <p class="muted">
+                        We are a passionate team of software engineers, data scientists, and agricultural experts 
+                        dedicated to revolutionizing the livestock industry. Our diverse expertise allows us to 
+                        develop innovative solutions that are both technologically advanced and practically grounded.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

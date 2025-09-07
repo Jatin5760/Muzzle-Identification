@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Classical Muzzle Analysis{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1 class="hero-title">Classical Muzzle Analysis</h1>
+        <p class="hero-subtitle">
+            Upload a muzzle image to perform a detailed biometric analysis using classical computer vision techniques.
+        </p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <div class="form-grid">
+            <div class="form-card">
+                <form action="{{ url_for('analysis_page') }}" method="post" enctype="multipart/form-data" class="form">
+                    <div class="form-group">
+                        <label for="file" class="form-label">Muzzle Image</label>
+                        <input type="file" id="file" name="file" class="file" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i data-feather="bar-chart-2"></i> Analyze Image
+                    </button>
+                </form>
+            </div>
+            <div class="info-card">
+                <h3>Analysis Features</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="grid"></i></div>
+                        <div class="info-text">
+                            <h4>Bead Arrangement</h4>
+                            <p>Analyzes the spatial distribution of muzzle beads.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="sidebar"></i></div>
+                        <div class="info-text">
+                            <h4>Ridge Analysis</h4>
+                            <p>Measures the density and orientation of muzzle ridges.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="pie-chart"></i></div>
+                        <div class="info-text">
+                            <h4>Pattern Metrics</h4>
+                            <p>Calculates inter-ridge distance and average bead size for a comprehensive analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

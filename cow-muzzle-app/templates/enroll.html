@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Enroll a New Cow{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1 class="hero-title">Enroll a New Cow</h1>
+        <p class="hero-subtitle">
+            Add a new cow to the database by providing a unique ID and a clear muzzle image.
+        </p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <div class="form-grid">
+            <div class="form-card">
+                <form action="{{ url_for('enroll_page') }}" method="post" enctype="multipart/form-data" class="form">
+                    <div class="form-group">
+                        <label for="cow_id" class="form-label">Cow ID</label>
+                        <input type="text" id="cow_id" name="cow_id" class="input" placeholder="e.g., Bessie-001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="file" class="form-label">Muzzle Image</label>
+                        <input type="file" id="file" name="file" class="file" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i data-feather="plus-circle"></i> Enroll Cow
+                    </button>
+                </form>
+                {% if success %}
+                    <div class="message success mt-lg">{{ success }}</div>
+                {% endif %}
+                {% if error %}
+                    <div class="message error mt-lg">{{ error }}</div>
+                {% endif %}
+            </div>
+            <div class="info-card">
+                <h3>Enrollment Guidelines</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="camera"></i></div>
+                        <div class="info-text">
+                            <h4>Clear, High-Quality Image</h4>
+                            <p>Ensure the muzzle is well-lit, in focus, and fills a significant portion of the frame.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="tag"></i></div>
+                        <div class="info-text">
+                            <h4>Unique & Consistent ID</h4>
+                            <p>Use a consistent naming convention for your cows to easily track them later.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="check-circle"></i></div>
+                        <div class="info-text">
+                            <h4>One Cow at a Time</h4>
+                            <p>Each enrollment should be for a single cow with its corresponding muzzle image.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

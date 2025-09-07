@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}How MuzzleID Works{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1 class="hero-title">How It Works</h1>
+        <p class="hero-subtitle">
+            A simple yet powerful process: from a muzzle image to actionable data in three easy steps.
+        </p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <div class="info-list">
+            <div class="info-item">
+                <div class="info-icon"><h2>1</h2></div>
+                <div class="info-text">
+                    <h4>Capture & Upload</h4>
+                    <p>Take a clear, high-resolution photo of a cow's muzzle. For best results, ensure the muzzle is clean and well-lit. Upload the image through our secure portal.</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon"><h2>2</h2></div>
+                <div class="info-text">
+                    <h4>AI-Powered Analysis</h4>
+                    <p>Our system uses the Segment Anything 2 model to precisely isolate the muzzle area. Then, a ResNet50-based feature extractor generates a unique 2048-dimensional "fingerprint" from the muzzle's distinct patterns.</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon"><h2>3</h2></div>
+                <div class="info-text">
+                    <h4>Enroll or Identify</h4>
+                    <p>When enrolling, the fingerprint is stored with the cow's ID. When identifying, the fingerprint is compared against the entire database using cosine similarity to find the best match with a confidence score above 85%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

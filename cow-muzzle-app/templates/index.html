@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Bovine Muzzle ID - AI-Powered Cattle Identification{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">The Future of Livestock Management is Here</h1>
+            <p class="hero-subtitle">
+                Leverage cutting-edge AI to identify, track, and manage your cattle with unparalleled accuracy. 
+                Our muzzle identification technology is the digital fingerprint for your herd.
+            </p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('enroll_page') }}" class="btn btn-primary">
+                    <i data-feather="user-plus"></i> Enroll a Cow
+                </a>
+                <a href="{{ url_for('identify_page') }}" class="btn btn-secondary">
+                    <i data-feather="search"></i> Identify a Cow
+                </a>
+            </div>
+        </div>
+        <div class="hero-icon">
+            <i data-feather="shield" class="magnifying-glass"></i>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">Accuracy Rate</div>
+                <i data-feather="check-circle" class="stat-icon"></i>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Sub-Second</div>
+                <div class="stat-label">Identification Speed</div>
+                <i data-feather="zap" class="stat-icon"></i>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Scalable</div>
+                <div class="stat-label">For Any Herd Size</div>
+                <i data-feather="bar-chart-2" class="stat-icon"></i>
+            </div>
+        </div>
+        <div class="demo-card">
+            <h2 class="demo-title">Explore Classical Analysis</h2>
+            <p class="muted">
+                Dive deep into the traditional biometrics of muzzle patterns. Our analysis tool provides detailed 
+                visualizations of bead arrangement, ridge density, and more.
+            </p>
+            <a href="{{ url_for('analysis_page') }}" class="btn btn-primary">
+                <i data-feather="bar-chart"></i> Launch Analysis Tool
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

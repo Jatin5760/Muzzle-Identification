@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Identify a Cow{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1 class="hero-title">Identify a Cow</h1>
+        <p class="hero-subtitle">
+            Upload a muzzle image to identify a cow from the enrolled database.
+        </p>
+    </div>
+</section>
+
+<section class="form-section">
+    <div class="container">
+        <div class="form-grid">
+            <div class="form-card">
+                <form action="{{ url_for('identify_page') }}" method="post" enctype="multipart/form-data" class="form">
+                    <div class="form-group">
+                        <label for="file" class="form-label">Muzzle Image</label>
+                        <input type="file" id="file" name="file" class="file" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i data-feather="search"></i> Identify Cow
+                    </button>
+                </form>
+                {% if result %}
+                    <div class="message result mt-lg">{{ result }}</div>
+                {% endif %}
+                {% if error %}
+                    <div class="message error mt-lg">{{ error }}</div>
+                {% endif %}
+            </div>
+            <div class="info-card">
+                <h3>Identification Process</h3>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="upload-cloud"></i></div>
+                        <div class="info-text">
+                            <h4>1. Upload Image</h4>
+                            <p>Select a clear muzzle image of the cow you want to identify.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="cpu"></i></div>
+                        <div class="info-text">
+                            <h4>2. AI Analysis</h4>
+                            <p>Our AI model extracts a unique fingerprint from the muzzle and compares it to the database.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i data-feather="check-square"></i></div>
+                        <div class="info-text">
+                            <h4>3. Get Result</h4>
+                            <p>Receive the best match and a similarity score in seconds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

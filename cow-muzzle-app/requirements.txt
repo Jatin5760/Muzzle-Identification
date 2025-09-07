@@ -1,0 +1,10 @@
+# requirements.txt
+
+Flask
+torch
+torchvision
+scipy
+opencv-python-headless
+matplotlib
+scikit-image
+gunicorn

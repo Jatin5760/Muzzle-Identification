@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Analysis Results{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1 class="hero-title">Analysis Results</h1>
+        <p class="hero-subtitle">
+            Detailed biometric breakdown of the provided muzzle image.
+        </p>
+    </div>
+</section>
+
+<section class="analysis-results">
+    <div class="container">
+        <div class="visualization-card mb-xl">
+            <h3>Input Images</h3>
+            <img src="data:image/png;base64,{{ visualizations['Input Images'] }}" alt="Input Images">
+        </div>
+
+        <div class="visualization-card mb-xl">
+            <h3>Feature Extraction Summary</h3>
+            <div class="summary-graph">
+                {{ summary_graph_html|safe }}
+            </div>
+        </div>
+
+        <div class="visualization-grid grid-2">
+            {% for title, image_b64 in analysis_visualizations.items() %}
+            <div class="visualization-card">
+                <h3>{{ title }}</h3>
+                <img src="data:image/png;base64,{{ image_b64 }}" alt="{{ title }}">
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-xl">
+            <a href="{{ url_for('analysis_page') }}" class="btn btn-secondary">
+                <i data-feather="arrow-left"></i> Perform Another Analysis
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
